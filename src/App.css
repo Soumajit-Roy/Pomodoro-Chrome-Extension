@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: var(--color-bg);
+}
+.slider-range{
+    display: flex;
+    flex-direction: row;
+}
+.plus-minus-btn{
+    border: none;
+    background-color: transparent;
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.75));
+}
+.plus-minus-btn:active{
+    position: relative;
+    top: 2px;
+}
+
+.timer-btn-wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.start-btn, .reset-btn, .pause-btn {
+    font-family: "Playwrite DE Grund", cursive; 
+    
+    padding: 10px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 0;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    font-size: 15px;
+    transition: all 0.5s ease;
+}
+.start-btn:hover, .reset-btn:hover, .pause-btn:hover {
+    letter-spacing: 3px;
+    color: hsl(0, 0%, 100%);
+  }
+.start-btn:hover{
+    background-color: #059212dc;
+    box-shadow: #059212dc 0px 7px 29px 0px;
+}  
+.reset-btn:hover{
+    background-color: #D91656dc;
+    box-shadow: #D91656dc 0px 7px 29px 0px;
+}
+.pause-btn:hover{
+    background-color: #EB8317dc;
+    box-shadow: #EB8317dc 0px 7px 29px 0px;
+}
+  
+.start-btn:active, .reset-btn:active, .pause-btn:active {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+    transform: translateY(10px);
+    transition: 100ms;
+  }
+  
+
+  /* From Uiverse.io by andrew-demchenk0 */ 
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 64px;
+    height: 34px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #73C0FC;
+    transition: .4s;
+    border-radius: 30px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    left: 2px;
+    bottom: 2px;
+    z-index: 2;
+    background-color: #e8e8e8;
+    transition: .4s;
+  }
+  
+  .sun svg {
+    position: absolute;
+    top: 6px;
+    left: 36px;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .moon svg {
+    fill: #73C0FC;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* .switch:hover */.sun svg {
+    animation: rotate 15s linear infinite;
+  }
+  
+  @keyframes rotate {
+   
+    0% {
+      transform: rotate(0);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* .switch:hover */.moon svg {
+    animation: tilt 5s linear infinite;
+  }
+  
+  @keyframes tilt {
+   
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    25% {
+      transform: rotate(-10deg);
+    }
+  
+    75% {
+      transform: rotate(10deg);
+    }
+  
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  .input:checked + .slider {
+    background-color: #183153;
+  }
+  
+  .input:focus + .slider {
+    box-shadow: 0 0 1px #183153;
+  }
+  
+  .input:checked + .slider:before {
+    transform: translateX(30px);
+  }
+
+  .toggle-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin: 10px 5px;
+  }
+
+.timer-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 20px;
+}

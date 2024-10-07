@@ -1,0 +1,8 @@
+:root {
+    font-family: "Playwrite DE Grund", cursive;
+    --color-bg : #9CEC5B;
+}
+
+.dark-theme{
+    --color-bg : #56268e;
+}
