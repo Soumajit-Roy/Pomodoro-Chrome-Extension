@@ -185,16 +185,13 @@ const Timer = () => {
     </div>
     
     <div className="timer-wrapper">
-      <div
+      <div className="progress-bar"
         style={{
           width: `${percentageCalc()}%`, // Set the width dynamically
-          height: "20px",
-          backgroundColor: "green",
-          transition: "width 0.5s ease",
         }}
       ></div>
       
-      <p>{formatTime(timeRemaining)} Minutes</p>
+      <p className="txt">{formatTime(timeRemaining)} Minutes</p>
       <div className="timer-btn-wrapper">
       <button
       className="start-btn"
@@ -219,7 +216,7 @@ const Timer = () => {
       </button>
       </div>
 
-      <p id="value">{workTime} Minutes</p>
+      <p id="value" className="txt">{workTime} Minutes</p>
       <div className="slider-range">
       <button className="plus-minus-btn" onClick={incrementValue} disabled={isRunning && !isPaused}>
       <img width="32" height="32" src="https://img.icons8.com/skeuomorphism/32/minus.png" alt="minus"/>

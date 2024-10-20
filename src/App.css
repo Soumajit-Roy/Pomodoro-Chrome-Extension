@@ -187,3 +187,12 @@ body{
     padding: 10px 20px;
     gap: 20px;
 }
+
+.txt{
+  color: var(--color-txt);
+}
+.progress-bar{
+  height: 20px;
+  background-color: var(--color-prg-bar);
+  transition: "width 0.5s ease;
+}
