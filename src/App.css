@@ -4,6 +4,7 @@
 }
 body{
     background-color: var(--color-bg);
+    min-width: 400px;
 }
 .slider-range{
     display: flex;
