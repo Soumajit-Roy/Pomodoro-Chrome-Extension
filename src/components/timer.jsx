@@ -3,12 +3,14 @@ import { useState, useEffect } from "react";
 import audioFile from "../assets/alert.mp3";
 import { toast, ToastContainer, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import CircularProgress from '@mui/material/CircularProgress';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 
 const Timer = () => {
   const [isRunning, setisRunning] = useState(false);
   const [workTime, setWorkTime] = useState(30);
   const [timeRemaining, settimeRemaining] = useState(workTime * 60);
-  const [alertMessage, setAlertMessage] = useState(""); // State for alert messages
   const [isPaused, setisPaused] = useState(false); //State for pause function
 
   //Slider Change Update
@@ -185,13 +187,56 @@ const Timer = () => {
     </div>
     
     <div className="timer-wrapper">
-      <div className="progress-bar"
-        style={{
-          width: `${percentageCalc()}%`, // Set the width dynamically
+
+    {/* Circular Progress Bar */}
+    <Box sx={{ position: 'relative', 
+      display: 'inline-flex'
+     }}>
+    <CircularProgress
+        variant="determinate"
+        size="150px"
+        value={100}
+        sx={{
+          color: 'white',
         }}
-      ></div>
-      
-      <p className="txt">{formatTime(timeRemaining)} Minutes</p>
+      />
+      <CircularProgress 
+      variant="determinate" 
+      value={percentageCalc()} 
+      size="150px"
+      sx={{
+        position: 'absolute',
+        color: "var(--color-prg-bar)",
+        borderRadius: "50%",
+        boxShadow: "inset 0 0 10px rgba(0, 0, 0, 0.5)",
+      }}
+       />
+      <Box
+        sx={{
+          top: 0,
+          left: 0,
+          bottom: 0,
+          right: 0,
+          position: 'absolute',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Typography
+          variant="h5"
+          component="div"
+          sx={{ color: 'var(--color-txt)',
+                fontFamily: '"Playwrite DE Grund", cursive;',
+                wordWrap: "break-word",
+                textAlign: 'center'
+           }}
+        >
+          {formatTime(timeRemaining)} Minutes
+        </Typography>
+      </Box>
+    </Box>
+
       <div className="timer-btn-wrapper">
       <button
       className="start-btn"
@@ -218,9 +263,9 @@ const Timer = () => {
 
       <p id="value" className="txt">{workTime} Minutes</p>
       <div className="slider-range">
-      <button className="plus-minus-btn" onClick={incrementValue} disabled={isRunning && !isPaused}>
-      <img width="32" height="32" src="https://img.icons8.com/skeuomorphism/32/minus.png" alt="minus"/>
-      </button>
+      <button className="plus-minus-btn" onClick={decrementValue} disabled={isRunning && !isPaused}>
+      <img src="https://img.icons8.com/skeuomorphism/32/minus.png" alt="minus"/>
+      </button> 
       <input
         type="range"
         id="work-time"
@@ -231,9 +276,10 @@ const Timer = () => {
         onChange={handleInputChange}
         disabled={isRunning && !isPaused}
       />
-      <button className="plus-minus-btn" onClick={decrementValue} disabled={isRunning && !isPaused}>
-      <img src="https://img.icons8.com/skeuomorphism/32/add.png" alt="add"/>
+      <button className="plus-minus-btn" onClick={incrementValue} disabled={isRunning && !isPaused}>
+      <img width="32" height="32" src="https://img.icons8.com/skeuomorphism/32/add.png" alt="add"/>
       </button>
+      
       </div>
       </div>
 

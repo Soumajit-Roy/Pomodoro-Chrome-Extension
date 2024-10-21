@@ -24,7 +24,11 @@ body{
     flex-direction: row;
     gap: 20px;
 }
-
+@media (max-width: 480px) {
+  .timer-btn-wrapper{
+    flex-direction: column;
+  }
+}
 .start-btn, .reset-btn, .pause-btn {
     font-family: "Playwrite DE Grund", cursive; 
     
@@ -190,9 +194,4 @@ body{
 
 .txt{
   color: var(--color-txt);
-}
-.progress-bar{
-  height: 20px;
-  background-color: var(--color-prg-bar);
-  transition: "width 0.5s ease;
 }
