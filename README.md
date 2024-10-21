@@ -20,8 +20,7 @@ Key Features
 
 Screenshots
 -----------
-
-
+<a href="https://ibb.co/wSdKVyn"><img src="https://i.ibb.co/F5hB26Q/Pixefy-533x610px-20241021-22-00.png" alt="Pixefy-533x610px-20241021-22-00" border="0"></a>
 
 Technology Stack
 ----------------
